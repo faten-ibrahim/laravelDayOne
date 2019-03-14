@@ -22,12 +22,12 @@ class StorePostRequest extends FormRequest
      * @return array
      */
 
-    
+    // 'title' => 'required|min:3|unique:posts,title,'.$this->post['id'],
     public function rules()
     {
         return [
            
-                'title' => 'required|unique:posts|min:3',
+                'title' => 'required|min:3|unique:posts,title,'.$this->post['id'],
                 'description' => 'required|min:10',
             
         ];

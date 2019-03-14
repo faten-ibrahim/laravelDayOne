@@ -13,10 +13,11 @@ class AddSluggedTitle extends Migration
      */
     public function up()
     {
-        chema::table('posts', function (Blueprint $table) {
-            $table->string('title')->nullable();
+        schema::table('posts', function (Blueprint $table) {
+            $table->string('slug')->nullable();
         });
     }
+
 
     /**
      * Reverse the migrations.

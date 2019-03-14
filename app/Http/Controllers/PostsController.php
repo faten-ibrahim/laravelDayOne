@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Http\Requests\post\StorePostRequest;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
@@ -29,8 +30,21 @@ class PostsController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        Post::create($request->all());
+        
+        // dd($request);
+        //$t=$request->input('title');
+        
+       // $slug = SlugService::createSlug(Post::class,'slug', $request->input('title'),['unique' => false]);
 
+        // dd($slug);
+        // Post::create([
+        //     'title' => request('title'),
+        //     'description ' => request('description'),
+        //     'user_id' => auth()->id(),
+        //     ]);
+
+        //$request->input('slug')=$slug;
+        Post::create($request->all());
         return redirect()->route('posts.index');
     }
 
@@ -41,14 +55,14 @@ class PostsController extends Controller
         ]);
     }
 
-    public function update($post,StorePostRequest $request){
+    public function update(Post $post,StorePostRequest $request){
         // $newPost = Post::find($post);
 
         // $newPost= request()->all();
 
         // $newPost->save();
        
-        Post::find($post)->update($request->all());
+        $post->update($request->all());
         return redirect()->route('posts.index');
     }
     

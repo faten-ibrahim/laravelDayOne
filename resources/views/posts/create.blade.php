@@ -24,6 +24,7 @@
         <label for="exampleInputEmail1">Title</label>
         <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
     </div>
+    <input name="slug" type="text" type="hidden" value="">
     <div class="form-group">
         <label for="exampleInputPassword1">Description</label>
         <textarea name="description" class="form-control"></textarea>
