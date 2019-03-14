@@ -27,9 +27,23 @@ class StorePostRequest extends FormRequest
     {
         return [
            
-                'title' => 'required|unique:posts|max:255',
+                'title' => 'required|unique:posts|min:3',
                 'description' => 'required',
             
+        ];
+    }
+
+    public function message()
+    {
+        return [
+           
+                'title.required' => 'Sorry ! title is required',
+                'title.min' => 'Title should not be less than 3 letters',
+                'title.unique' => 'Title should be unique ,that title is already exists ',
+                'description.required' => 'description is required !',
+
+            
+
         ];
     }
 }
