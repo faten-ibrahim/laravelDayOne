@@ -28,7 +28,7 @@ class StorePostRequest extends FormRequest
         return [
            
                 'title' => 'required|unique:posts|min:3',
-                'description' => 'required',
+                'description' => 'required|min:10',
             
         ];
     }
@@ -40,7 +40,8 @@ class StorePostRequest extends FormRequest
                 'title.required' => 'Sorry ! title is required',
                 'title.min' => 'Title should not be less than 3 letters',
                 'title.unique' => 'Title should be unique ,that title is already exists ',
-                'description.required' => 'description is required !',
+                'description.required' => 'description should not be less than 10 letters !',
+                'description.min' => 'description is required !',
 
             
 
