@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+
+<div class="container">
 @section('content')
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -11,8 +13,10 @@
     </div>
 @endif
 
-<div class="container">
-<a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
+<br>
+<br>
+
+
 
 <form action="{{route('posts.store')}}" method="POST">
     @csrf
@@ -35,6 +39,7 @@
         </div>
 
 <button type="submit" class="btn btn-primary">Submit</button>
+<a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
 </form>
 </div>  
 
