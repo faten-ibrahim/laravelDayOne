@@ -41,14 +41,14 @@ class PostsController extends Controller
         ]);
     }
 
-    public function update($post){
+    public function update($post,StorePostRequest $request){
         // $newPost = Post::find($post);
 
         // $newPost= request()->all();
 
         // $newPost->save();
        
-        Post::find($post)->update(request()->all());
+        Post::find($post)->update($request->all());
         return redirect()->route('posts.index');
     }
     

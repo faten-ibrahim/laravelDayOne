@@ -1,8 +1,21 @@
  @extends('layouts.app')
 
  @section('content')
- <a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
+ <br>
+<div class="container">
+@section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
+<br>
+<br>
     <form action="{{route('posts.update',['post' => $post->id])}}" method="POST">
         @csrf
         @method('PUT')
@@ -15,8 +28,10 @@
             <textarea name="description" class="form-control">{{$post->description}}</textarea>
         </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary"  style="display:inline; float:left;" >Submit</button>
     </form>
+    <a href="{{route('posts.index')}}" class="btn btn-danger" style="display:inline; float:left; margin-left:10px;">Back</a>
 
+</div>
 @endsection
  
