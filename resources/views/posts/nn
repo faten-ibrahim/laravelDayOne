@@ -1,3 +1,0 @@
- <a href="{{route('showtakeup', ['id' => $campaigns->id])}}">{{ $campaigns->name }}</a>
-
- {{$users->render()}}

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Http\Requests\post\StorePostRequest;
 
 class PostsController extends Controller
 {
@@ -25,9 +27,9 @@ class PostsController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
-        Post::create(request()->all());
+        Post::create($request->all());
 
         return redirect()->route('posts.index');
     }
