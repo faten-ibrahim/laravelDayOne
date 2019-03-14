@@ -33,18 +33,28 @@ class StorePostRequest extends FormRequest
         ];
     }
 
-    public function message()
+    // public function message()
+    // {
+    //     return [
+           
+    //             'title.required' => 'Sorry ! title is required',
+    //             'title.min' => 'Title should not be less than 3 letters',
+    //             'title.unique' => 'Title should be unique ,that title is already exists ',
+    //             'description.required' => 'description should not be less than 10 letters !',
+    //             'description.min' => 'description is required !',    
+
+    //     ];
+    // }
+
+
+    public function messages()
     {
         return [
-           
                 'title.required' => 'Sorry ! title is required',
                 'title.min' => 'Title should not be less than 3 letters',
                 'title.unique' => 'Title should be unique ,that title is already exists ',
                 'description.required' => 'description should not be less than 10 letters !',
-                'description.min' => 'description is required !',
-
-            
-
-        ];
+                'description.min' => 'description is required !',   
+     ];
     }
 }
