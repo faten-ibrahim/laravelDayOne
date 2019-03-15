@@ -23,8 +23,6 @@ class PostsController extends Controller
         
     }
     
-
-
     public function show(Post $post){
         return new PostResource($post);
     }
