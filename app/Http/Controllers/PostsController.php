@@ -8,13 +8,15 @@ use App\Post;
 use App\User;
 use App\Http\Requests\post\StorePostRequest;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
     public function index()
     {
         return view('posts.index', [
-            'posts' => Post::all()
+            'posts' => Post::paginate(2)
+            // 'posts' => Post::all()
         ]);
     }
 

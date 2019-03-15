@@ -36,9 +36,10 @@
         </td>
       </tr>
     @endforeach
+   
     </tbody>
   </table>  
-  
+  {{ $posts->links() }}
   <br>
   <br>
   <a class="btn btn-success" href="{{route('posts.create')}}">Add New Post</a>
