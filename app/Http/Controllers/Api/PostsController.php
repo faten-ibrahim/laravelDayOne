@@ -19,8 +19,9 @@ class PostsController extends Controller
     public function showUsers(){
         return PostResource::collection(User::all());
 
-        // return Post::all();
+        
     }
+
 
     public function show(Post $post){
         return new PostResource($post);
