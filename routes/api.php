@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::get('/posts','PostsController@index');
+// Route::get('7ga', function () {
+//     return "<h1>Helloooo<h1>";
+// });
+
+// After sing api controller
+
+Route::get('/posts','Api\PostsController@index');
+
