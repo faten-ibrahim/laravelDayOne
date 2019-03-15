@@ -25,4 +25,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // After sing api controller
 
 Route::get('/posts','Api\PostsController@index');
+Route::get('/posts/{post}','Api\PostsController@show');
+Route::get('/users','Api\PostsController@showUsers'); // does not work
 
