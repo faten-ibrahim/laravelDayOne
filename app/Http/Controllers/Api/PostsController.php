@@ -13,8 +13,8 @@ class PostsController extends Controller
 {
     public function index(){
         // {{ $posts->links() }}
-        return PostResource::collection(Post::paginate(2));
-        // return PostResource::collection(Post::all());
+        // return PostResource::collection(Post::paginate(2));
+        return PostResource::collection(Post::all());
 
     }
 
@@ -23,6 +23,7 @@ class PostsController extends Controller
         
     }
     
+
 
     public function show(Post $post){
         return new PostResource($post);
