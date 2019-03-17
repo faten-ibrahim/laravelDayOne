@@ -24,8 +24,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // After sing api controller
 
+// Route::get('/posts','Api\PostsController@index')->middleware('auth:api');
 Route::get('/posts','Api\PostsController@index');
-Route::get('/posts/{post}','Api\PostsController@show');
+Route::get('/posts/{post}','Api\PostsController@show')->middleware('auth:api');
 Route::get('/users','Api\PostsController@showUsers'); // does not work
-Route::post('/posts','Api\PostsController@store');
+Route::post('/posts','Api\PostsController@store')->middleware('auth:api');
 
